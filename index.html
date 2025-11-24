@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Future Gamer Presentation</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0b1a3a;
+        color: white;
+        overflow: hidden;
+    }
+
+    .slide {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        padding: 50px;
+        box-sizing: border-box;
+        background: linear-gradient(135deg, #0b1a3a, #1b3f8b);
+        animation: fade 0.6s ease-in-out;
+    }
+
+    @keyframes fade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h1, h2 {
+        color: #4da3ff;
+    }
+
+    .controls {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 20px;
+    }
+
+    button {
+        padding: 12px 25px;
+        border: none;
+        background: #4da3ff;
+        color: white;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #1f78d1;
+    }
+
+</style>
+</head>
+<body>
+<div class="slide" style="display:block">
+    <h1>Future Gamer</h1>
+    <p>EXPLORING THE Future Gamer</p>
+</div>
+<div class="slide">
+    <h1>WELCOME TO YOUR GAMING HUB TUTORIAL!!</h1>
+    <p>Reliable and easy games that can make you more happy because of their own stories!!</p>
+    <p>Explore many things and games</p>
+</div>
+<div class="slide">
+    <h1>MASTER YOUR GAMING SKILLS</h1>
+    <h2>Gaming Movement</h2>
+    <p>The Future begins!!</p>
+</div>
+<div class="slide">
+    <h1>Tutorial’s</h1>
+    <p>"To master your gaming skills, start by practicing aim and movement in training modes, study enemy patterns, experiment with different strategies, and review gameplay footage to identify areas for improvement."</p>
+</div>
+<div class="slide">
+    <h1>Movement Basics</h1>
+    <p>"Begin by learning basic movement controls: use the left stick or WASD keys to move, the right stick or mouse to look around, press 'jump' to navigate terrain, and combine sprinting with crouching or sliding to improve agility and evade enemies effectively."</p>
+</div>
+<div class="slide">
+    <h1>CREATOR:</h1>
+    <h2>DANIEL BELICENA</h2>
+</div>
+<div class="controls">
+    <button onclick="plusSlides(-1)">Previous</button>
+    <button onclick="plusSlides(1)">Next</button>
+</div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}
+</script>
+
+</body>
+</html>
