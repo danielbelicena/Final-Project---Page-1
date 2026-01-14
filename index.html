@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -20,6 +20,7 @@
         box-sizing: border-box;
         background: linear-gradient(135deg, #0b1a3a, #1b3f8b);
         animation: fade 0.6s ease-in-out;
+        text-align: center;
     }
 
     @keyframes fade {
@@ -29,6 +30,14 @@
 
     h1, h2 {
         color: #4da3ff;
+    }
+
+    .game-image {
+        max-width: 70%;
+        height: auto;
+        border-radius: 15px;
+        margin-top: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
     .controls {
@@ -50,43 +59,63 @@
         cursor: pointer;
         transition: 0.3s;
     }
+
     button:hover {
         background: #1f78d1;
     }
-
 </style>
 </head>
 <body>
+
 <div class="slide" style="display:block">
     <h1>Future Gamer</h1>
     <p>EXPLORING THE Future Gamer</p>
 </div>
+
 <div class="slide">
     <h1>WELCOME TO YOUR GAMING HUB TUTORIAL!!</h1>
     <p>Reliable and easy games that can make you more happy because of their own stories!!</p>
     <p>Explore many things and games</p>
 </div>
+
+<div class="slide">
+    <h1>Featured Game: Uncharted 4</h1>
+    <p>An action-adventure game with cinematic storytelling and exploration.</p>
+    <img src="uncharted4.jpg" alt="Uncharted 4" class="game-image">
+</div>
+
+<div class="slide">
+    <h1>Featured Game: Resident Evil 4</h1>
+    <p>A survival horror masterpiece with intense combat and atmosphere.</p>
+    <img src="re4.jpg" alt="Resident Evil 4" class="game-image">
+</div>
+
 <div class="slide">
     <h1>MASTER YOUR GAMING SKILLS</h1>
     <h2>Gaming Movement</h2>
     <p>The Future begins!!</p>
 </div>
+
 <div class="slide">
     <h1>Tutorial’s</h1>
     <p>"To master your gaming skills, start by practicing aim and movement in training modes, study enemy patterns, experiment with different strategies, and review gameplay footage to identify areas for improvement."</p>
 </div>
+
 <div class="slide">
     <h1>Movement Basics</h1>
     <p>"Begin by learning basic movement controls: use the left stick or WASD keys to move, the right stick or mouse to look around, press 'jump' to navigate terrain, and combine sprinting with crouching or sliding to improve agility and evade enemies effectively."</p>
 </div>
+
 <div class="slide">
     <h1>CREATOR:</h1>
     <h2>DANIEL BELICENA</h2>
 </div>
+
 <div class="controls">
     <button onclick="plusSlides(-1)">Previous</button>
     <button onclick="plusSlides(1)">Next</button>
 </div>
+
 <script>
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -109,3 +138,4 @@ function showSlides(n) {
 
 </body>
 </html>
+
