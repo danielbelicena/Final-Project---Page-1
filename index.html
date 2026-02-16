@@ -1,13 +1,15 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Future Gamer Presentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
     body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: #0b1a3a;
+        background: linear-gradient(135deg, #0b1a3a, #1b3f8b);
         color: white;
         overflow: hidden;
     }
@@ -16,28 +18,38 @@
         display: none;
         width: 100vw;
         height: 100vh;
-        padding: 50px;
+        padding: 60px;
         box-sizing: border-box;
-        background: linear-gradient(135deg, #0b1a3a, #1b3f8b);
-        animation: fade 0.6s ease-in-out;
         text-align: center;
+        animation: fade 0.6s ease-in-out;
     }
 
     @keyframes fade {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from { opacity: 0; transform: translateX(30px); }
+        to { opacity: 1; transform: translateX(0); }
     }
 
-    h1, h2 {
+    h1 {
         color: #4da3ff;
+        font-size: 45px;
+    }
+
+    h2 {
+        color: #8bc6ff;
+    }
+
+    p {
+        font-size: 20px;
+        max-width: 800px;
+        margin: 15px auto;
+        line-height: 1.6;
     }
 
     .game-image {
         max-width: 70%;
-        height: auto;
         border-radius: 15px;
         margin-top: 20px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        box-shadow: 0 0 25px rgba(0,0,0,0.6);
     }
 
     .controls {
@@ -57,25 +69,41 @@
         font-size: 18px;
         border-radius: 10px;
         cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #2f7de1;
+        transform: scale(1.05);
+    }
+
+    .progress {
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        font-size: 18px;
+        color: #8bc6ff;
     }
 </style>
 </head>
 <body>
 
+<div class="progress" id="progress"></div>
+
 <div class="slide" style="display:block">
     <h1>Future Gamer</h1>
-    <p>EXPLORING THE Future Gamer</p>
+    <p>Exploring the future of gaming, storytelling, and skill development.</p>
 </div>
 
 <div class="slide">
-    <h1>WELCOME TO YOUR GAMING HUB TUTORIAL!!</h1>
-    <p>Reliable and easy games that can make you more happy because of their own stories!!</p>
-    <p>Explore many things and games</p>
+    <h1>WELCOME TO YOUR GAMING HUB</h1>
+    <p>This presentation introduces action, adventure, and survival games that improve strategy, reflexes, and critical thinking.</p>
 </div>
 
 <div class="slide">
     <h1>Featured Game: Uncharted 4</h1>
-    <p>An action-adventure game with cinematic storytelling and exploration.</p>
+    <p>Uncharted 4 is a cinematic action-adventure game developed by Naughty Dog.</p>
+    <p>You play as Nathan Drake exploring lost cities, solving puzzles, and surviving intense combat situations.</p>
     <img class="game-image"
          src="data:image/svg+xml;utf8,
          <svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
@@ -87,8 +115,16 @@
 </div>
 
 <div class="slide">
+    <h1>Why Play Uncharted 4?</h1>
+    <p> Improves decision making</p>
+    <p> Enhances problem-solving skills</p>
+    <p> Develops hand-eye coordination</p>
+</div>
+
+<div class="slide">
     <h1>Featured Game: Resident Evil 4</h1>
-    <p>A survival horror masterpiece with intense combat and atmosphere.</p>
+    <p>Resident Evil 4 is a survival horror game where players must manage resources and survive dangerous enemies.</p>
+    <p>It builds strategic thinking and awareness under pressure.</p>
     <img class="game-image"
          src="data:image/svg+xml;utf8,
          <svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
@@ -100,24 +136,37 @@
 </div>
 
 <div class="slide">
-    <h1>MASTER YOUR GAMING SKILLS</h1>
-    <h2>Gaming Movement</h2>
-    <p>The Future begins!!</p>
+    <h1>Why Play Resident Evil 4?</h1>
+    <p> Improves reaction time</p>
+    <p> Enhances strategic planning</p>
+    <p> Builds focus and patience</p>
 </div>
 
 <div class="slide">
-    <h1>Tutorial’s</h1>
-    <p>To master your gaming skills, practice aim and movement in training modes.</p>
+    <h1>MASTER YOUR GAMING SKILLS</h1>
+    <h2>Gaming Movement & Aim</h2>
+    <p>Practice in training modes to improve movement, accuracy, and reaction speed.</p>
 </div>
 
 <div class="slide">
     <h1>Movement Basics</h1>
-    <p>Use WASD or the left stick to move and the mouse or right stick to look around.</p>
+    <p>Use WASD (PC) or left analog stick (Console) to move.</p>
+    <p>Use mouse or right analog stick to aim and look around.</p>
+    <p>Master strafing, sprinting, and positioning.</p>
 </div>
 
 <div class="slide">
-    <h1>CREATOR:</h1>
+    <h1>Tips to Become a Better Gamer</h1>
+    <p> Practice daily</p>
+    <p> Adjust sensitivity settings</p>
+    <p> Learn from mistakes</p>
+    <p> Take breaks to avoid burnout</p>
+</div>
+
+<div class="slide">
+    <h1>CREATOR</h1>
     <h2>DANIEL BELICENA</h2>
+    <p>Future Gamer Presentation 2026</p>
 </div>
 
 <div class="controls">
@@ -142,9 +191,17 @@ function showSlides(n) {
         slides[i].style.display = "none";
     }
     slides[slideIndex - 1].style.display = "block";
+
+    document.getElementById("progress").innerText = 
+        "Slide " + slideIndex + " / " + slides.length;
 }
+
+// Keyboard Controls
+document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowRight") plusSlides(1);
+    if (e.key === "ArrowLeft") plusSlides(-1);
+});
 </script>
 
 </body>
 </html>
-
